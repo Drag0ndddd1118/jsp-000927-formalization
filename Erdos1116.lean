@@ -4252,7 +4252,7 @@ private lemma norm_gap_correction_ge (n : ℕ) {z : ℂ}
   have hconst : (1 / 2 : ℝ) ^ Fintype.card (PreviousIndex (n + 1)) =
       ∏ _ : PreviousIndex (n + 1), (1 / 2 : ℝ) := by simp
   rw [hconst]
-  exact Finset.prod_le_prod (fun _ _ ↦ by norm_num) (fun i _ ↦
+  exact Finset.prod_le_prod₀ (fun _ _ ↦ by norm_num) (fun i _ ↦
     half_le_norm_one_sub_actual_div n hlow i)
 
 private lemma gap_algebra (n : ℕ) :
